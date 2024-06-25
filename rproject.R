@@ -44,4 +44,18 @@ subject_3 <- data$Subject.3
 pie(subject_3 , labels= data$Name, main="Subject 3 Marks distribution", col=topo.colors(length(subject_3)))
 #total <- data$Total
 #pie(total, labels = data$Name, main="Distribution of total s Students",col=c(rgb(length(total))))
+find_student_details <- function(student_name) {
+  student_info <- data[data$Name == student_name, ]
+  return(student_info)
+}
+#funtin have been created for finding name from the student lists
 
+
+student_name_to_find <- readline("\nEnter the name you want to find out\n")
+details_of_student <- find_student_details(student_name_to_find)
+
+if (nrow(details_of_student) > 0) {
+  print(details_of_student)
+} else {
+  cat("No student found with the provided name.\n")
+}

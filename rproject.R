@@ -1,4 +1,4 @@
-data <- read.csv("data.csv")
+data <- read.csv("result.csv")
  print(data)
 high_achievers <- data[data$Percentage >80, ]
 cat("\nThe Names of the Students those percentage is greater than 80%\n")
